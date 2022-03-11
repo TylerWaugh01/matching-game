@@ -1,8 +1,23 @@
+
+// global variables
 let numberOfDogs = 5;
 const theLeftSide = document.getElementById("leftSide");
 const theRightSide = document.getElementById("rightSide");
 const dogArray = ['dog-1.png', 'dog-2.png', 'dog-3.png', 'dog-4.png'];
-const startButton = document.getElementById('startButton');
+
+// buttons
+const startButton = document.getElementById('startGameButton');
+
+// start event listener
+startGameButton.addEventListener('click', startGame);
+
+// game start
+
+function startGame() {
+  generateDogs();
+  startButton.disabled = 'true';
+}
+
 
 function generateDogs() {
     for (let i = 0; i < numberOfDogs; i++) {
@@ -22,6 +37,7 @@ function generateDogs() {
   theRightSide.appendChild(leftSideImages)
   theLeftSide.lastChild.addEventListener('click',nextLevel);
   document.body.addEventListener('click',gameOver);
+
 }
 
 function nextLevel() {
