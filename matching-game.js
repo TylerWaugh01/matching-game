@@ -5,8 +5,12 @@ const theLeftSide = document.getElementById("leftSide");
 const theRightSide = document.getElementById("rightSide");
 const dogArray = ['dog-1.png', 'dog-2.png', 'dog-3.png', 'dog-4.png'];
 
+// sounds
+const gameMusic = document.getElementById('game-music');
+const dogBark = document.getElementById('bark-sound');
+
 // buttons
-const startButton = document.getElementById('startGameButton');
+const startGameButton = document.getElementById('startGameButton');
 
 // start event listener
 startGameButton.addEventListener('click', startGame);
@@ -15,7 +19,9 @@ startGameButton.addEventListener('click', startGame);
 
 function startGame() {
   generateDogs();
-  startButton.disabled = 'true';
+  startGameMusic();
+  startGameButton.disabled = 'true';
+  
 }
 
 
@@ -24,7 +30,6 @@ function generateDogs() {
     let dog = document.createElement('img');
     let randomDog = Math.floor(Math.random() * dogArray.length); 
     dog.src = 'images/' + dogArray[randomDog];
-    
     
     let randomTop = Math.floor(Math.random() * 400) + 1; 
     let randomLeft = Math.floor(Math.random() * 400) + 1; 
@@ -36,9 +41,22 @@ function generateDogs() {
   leftSideImages.removeChild(leftSideImages.lastChild);
   theRightSide.appendChild(leftSideImages)
   theLeftSide.lastChild.addEventListener('click',nextLevel);
-  document.body.addEventListener('click',gameOver);
-
+  theLeftSide.lastChild.addEventListener('click',startDogBark);
+  document.querySelector('#gameContainer').addEventListener('click',gameOver); 
 }
+
+function startGameMusic(){
+  gameMusic.play();
+}
+
+function stopGameMusic(){
+  gameMusic.pause();
+}
+
+function startDogBark() {
+  dogBark.play();
+}
+
 
 function nextLevel() {
   event.stopPropagation();
@@ -55,7 +73,8 @@ function nextLevel() {
 function gameOver () {
   alert("Game Over!");
   theLeftSide.lastChild.removeEventListener('click',nextLevel);
-  document.body.removeEventListener('click',gameOver);
+  document.querySelector('#gameContainer').removeEventListener('click',gameOver); 
+  stopGameMusic();
 }
 
 
