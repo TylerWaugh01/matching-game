@@ -23,6 +23,12 @@ div {
   
 }
 
+h1 {
+  font-family: fantasy;
+  font-size: medium;
+  text-align: center;
+}
+
 #rightSide {
   left: 500px;
   border-left: 1px solid;
