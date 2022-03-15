@@ -51,6 +51,7 @@ function startGameMusic(){
 
 function stopGameMusic(){
   gameMusic.pause();
+  gameMusic.currentTime = 0
 }
 
 function startDogBark() {
