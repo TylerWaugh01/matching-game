@@ -1,6 +1,7 @@
 
 // global variables
 let numberOfDogs = 5;
+let petDogs = 0; 
 const theLeftSide = document.getElementById("leftSide");
 const theRightSide = document.getElementById("rightSide");
 const dogArray = ['dog-1.png', 'dog-2.png', 'dog-3.png', 'dog-4.png'];
@@ -11,6 +12,7 @@ const dogBark = document.getElementById('bark-sound');
 
 // buttons
 const startGameButton = document.getElementById('startGameButton');
+const restartGameButton = document.getElementById('restartGameButton');
 
 // start event listener
 startGameButton.addEventListener('click', startGame);
@@ -23,6 +25,7 @@ function startGame() {
   startGameButton.disabled = 'true';
   
 }
+
 
 
 function generateDogs() {
@@ -69,12 +72,21 @@ function nextLevel() {
     theRightSide.removeChild(theRightSide.firstChild);
   }
   generateDogs();
+  petDogs += 1; 
 }
 
 function gameOver () {
   alert("Game Over!");
-  theLeftSide.lastChild.removeEventListener('click',nextLevel);
+  startGameButton.disabled = 'false';
   document.querySelector('#gameContainer').removeEventListener('click',gameOver); 
+  while (theLeftSide.firstChild) {
+    theLeftSide.removeChild(theLeftSide.firstChild);
+}
+while (theRightSide.firstChild) {
+  theRightSide.removeChild(theRightSide.firstChild);
+}
+  theLeftSide.lastChild.removeEventListener('click',nextLevel);
+  
   stopGameMusic();
 }
 
