@@ -6,6 +6,10 @@
 	border-bottom: 0.4rem solid #a82f2b;
 }
 
+body {
+  background-color: orange;
+}
+
 #gameMusic {
   display: none;
 }
@@ -25,7 +29,7 @@ img {
 .right-side {
   position: absolute;
   margin-left: 50px;
-  width: 500px;
+  width: 600px;
   height: 500px;
   background-color: aquamarine
   

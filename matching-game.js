@@ -2,6 +2,8 @@
 // global variables
 let numberOfDogs = 5;
 let petDogs = 0; 
+let score = 0;
+const scoreDisplay = document.getElementById('score-display')
 const theLeftSide = document.getElementById("leftSide");
 const theRightSide = document.getElementById("rightSide");
 const dogArray = ['dog-1.png', 'dog-2.png', 'dog-3.png', 'dog-4.png'];
@@ -72,10 +74,13 @@ function nextLevel() {
     theRightSide.removeChild(theRightSide.firstChild);
   }
   generateDogs();
-  petDogs += 1; 
+  score += 1; 
+  scoreDisplay.innerHTML = score
+
 }
 
 function gameOver () {
+  stopGameMusic();
   alert("Game Over!");
   startGameButton.disabled = 'false';
   document.querySelector('#gameContainer').removeEventListener('click',gameOver); 
@@ -86,8 +91,7 @@ while (theRightSide.firstChild) {
   theRightSide.removeChild(theRightSide.firstChild);
 }
   theLeftSide.lastChild.removeEventListener('click',nextLevel);
-  
-  stopGameMusic();
+  scoreDisplay.innerHTML = 0
 }
 
 
