@@ -1,3 +1,11 @@
+
+.start-button {
+  -webkit-border-radius: 5;
+	-moz-border-radius: 5;
+	border-radius: 5px;	
+	border-bottom: 0.4rem solid #a82f2b;
+}
+
 #gameMusic {
   display: none;
 }
@@ -14,7 +22,16 @@ img {
 
 }
 
-div {
+.right-side {
+  position: absolute;
+  margin-left: 50px;
+  width: 500px;
+  height: 500px;
+  background-color: aquamarine
+  
+}
+
+.left-side {
   position: absolute;
   margin-left: 50px;
   width: 500px;

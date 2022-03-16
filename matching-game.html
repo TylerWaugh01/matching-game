@@ -6,22 +6,27 @@
   <link rel="stylesheet" href="matching-game.css">
 </head>
 <body>
-  <h1>Dog Park Matching Game</h1>
-  <p>Click on the extra dog on the left.</p>
+
+<div>
+<h1>Dog Park Matching Game</h1>
+<p>Click on the extra dog on the left.</p>
   
-  <button id="startGameButton" type="button">Start Game</button>
+
+<button id="startGameButton" type="button" class="start-button">Start Game</button>
+</div>
+  
 
 
 <div id="gameContainer">
-<div id="leftSide"></div>
-<div id="rightSide"></div>
+<div class="left-side" id="leftSide"></div>
+<div class="right-side" id="rightSide"></div>
 </div>
 
 <audio id="game-music" preload="auto" loop>
   <source src="Sounds/happy-feels-all-good-folks-mainmp3.mp3" type="audio/wav">
 
-  <audio id="bark-sound" preload="auto" >
-    <source src="Sounds/single-dog-bark-2.wav" type="audio/wav">
+<audio id="bark-sound" preload="auto" >
+  <source src="Sounds/single-dog-bark-2.wav" type="audio/wav">
 
   <script src='matching-game.js'></script>
 
