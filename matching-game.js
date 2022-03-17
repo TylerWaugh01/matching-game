@@ -80,6 +80,7 @@ function nextLevel() {
 }
 
 function gameOver () {
+  scoreDisplay.innerHTML = 0
   stopGameMusic();
   alert("Game Over!");
   startGameButton.disabled = 'false';
@@ -91,7 +92,6 @@ while (theRightSide.firstChild) {
   theRightSide.removeChild(theRightSide.firstChild);
 }
   theLeftSide.lastChild.removeEventListener('click',nextLevel);
-  scoreDisplay.innerHTML = 0
 }
 
 

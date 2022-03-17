@@ -1,3 +1,28 @@
+.title-container {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  align-content: flex-start
+}
+
+.title {
+  margin: 0;
+  text-align: center;
+  border: 10px solid darkblue;
+  background-color: aquamarine;
+  border-radius: 20px;
+  padding: none;
+}
+
+.pet { 
+  margin: 0;
+  text-align: center;
+
+  border-radius: 20px;
+  padding: none;
+}
+
+
 
 .start-button {
   -webkit-border-radius: 5;
