@@ -3,12 +3,14 @@
 let numberOfDogs = 5; 
 let petDogs = 0;
 let score = 0;
-let currentTime = 30
+let timeLeft = 30;
+const timer = document.getElementById('timer-countdown');
+// const timerId = setInterval(countdown, 1000);
 const scoreDisplay = document.getElementById('score-display')
 const theLeftSide = document.getElementById("leftSide");
 const theRightSide = document.getElementById("rightSide");
 const dogArray = ['dog-1.png', 'dog-2.png', 'dog-3.png', 'dog-4.png'];
-const timeLeft = document.querySelector('#timer')
+
 // sounds
 const gameMusic = document.getElementById('game-music');
 const dogBark = document.getElementById('bark-sound');
@@ -25,10 +27,21 @@ startGameButton.addEventListener('click', startGame);
 function startGame() {
   generateDogs();
   startGameMusic();
+  countdown();
   startGameButton.disabled = 'true';
-  let countDownTimerId = setInterval(countDown, 1000)
-  
 }
+
+// function countdown(); {
+//   if (timeLeft == -1) {
+//     clearTimeout(timerId);
+//     gameOver();
+//   }
+//   else {
+//     timer.innerHTML = timeLeft + 'seconds remaining';
+//     timeLeft--;
+//   }
+
+
 
 
 
@@ -81,7 +94,7 @@ function nextLevel() {
 
 }
 
-function gameOver () {
+function gameOver() {
   stopGameMusic();
   // clearCountDown();
   // score = 0;
@@ -97,20 +110,7 @@ while (theRightSide.firstChild) {
   theLeftSide.lastChild.removeEventListener('click',nextLevel);
 }
 
-function countDown() {
-  currentTime--
-  timeLeft.textContent = currentTime
- 
-  if (currentTime == 0) {
-    clearInterval(countDownTimerId)
-    alert('GAME OVER! Your final score is ' + score)
-  }
- 
- }
 
- function clearCountDown() {
-  clearInterval(countDownTimerId)
- }
  
  
 
