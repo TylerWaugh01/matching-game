@@ -3,8 +3,8 @@
 let numberOfDogs = 5; 
 let petDogs = 0;
 let score = 0;
-let timeLeft = 30;
-const timer = document.getElementById('timer-countdown');
+// let timeLeft = 30;
+// const timer = document.getElementById('timer-countdown');
 // const timerId = setInterval(countdown, 1000);
 const scoreDisplay = document.getElementById('score-display')
 const theLeftSide = document.getElementById("leftSide");
@@ -27,19 +27,21 @@ startGameButton.addEventListener('click', startGame);
 function startGame() {
   generateDogs();
   startGameMusic();
-  countdown();
+  // countdown();
   startGameButton.disabled = 'true';
 }
 
-// function countdown(); {
-//   if (timeLeft == -1) {
-//     clearTimeout(timerId);
-//     gameOver();
-//   }
-//   else {
-//     timer.innerHTML = timeLeft + 'seconds remaining';
-//     timeLeft--;
-//   }
+function countdown(); {
+  if (timeLeft === -1) {
+    clearTimeout(timerId);
+    gameOver();
+  }
+  else {
+    timer.innerHTML = timeLeft + 'seconds remaining';
+    timeLeft--;
+  }
+
+}
 
 
 
@@ -97,7 +99,8 @@ function nextLevel() {
 function gameOver() {
   stopGameMusic();
   // clearCountDown();
-  // score = 0;
+  scoreDisplay.innerHTML = 0
+
   alert("Game Over!");
   document.querySelector('#gameContainer').removeEventListener('click',gameOver); 
   
@@ -109,10 +112,4 @@ while (theRightSide.firstChild) {
 }
   theLeftSide.lastChild.removeEventListener('click',nextLevel);
 }
-
-
- 
- 
-
-
 
