@@ -4,7 +4,7 @@ let numberOfDogs = 5;
 let petDogs = 0;
 let score = 0;
 let currentTime = 30
-let timerId = null
+// let timerId = null
 const timeLeft = document.querySelector('#time-left')
 const scoreDisplay = document.getElementById('score-display')
 const theLeftSide = document.getElementById("leftSide");
@@ -27,20 +27,20 @@ startGameButton.addEventListener('click', startGame);
 function startGame() {
   generateDogs();
   startGameMusic();
-  countDownTimerId = setInterval(countDown, 1000)
+  // countDownTimerId = setInterval(countDown, 1000)
   startGameButton.disabled = 'true';
 }
 
-function countDown() {
-  currentTime--
-  timeLeft.textContent = currentTime
+// function countDown() {
+//   currentTime--
+//   timeLeft.textContent = currentTime
  
-  if (currentTime == 0) {
-    clearInterval(countDownTimerId)
-    clearInterval(timerId)
-    alert('GAME OVER! Your final score is ' + result)
-  }
-}
+//   if (currentTime == 0) {
+//     clearInterval(countDownTimerId)
+//     clearInterval(timerId)
+//     alert('GAME OVER! Your final score is ' + result)
+//   }
+// }
 
 
 
