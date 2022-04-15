@@ -27,20 +27,9 @@ startGameButton.addEventListener('click', startGame);
 function startGame() {
   generateDogs();
   startGameMusic();
-  // countDownTimerId = setInterval(countDown, 1000)
   startGameButton.disabled = 'true';
 }
 
-// function countDown() {
-//   currentTime--
-//   timeLeft.textContent = currentTime
- 
-//   if (currentTime == 0) {
-//     clearInterval(countDownTimerId)
-//     clearInterval(timerId)
-//     alert('GAME OVER! Your final score is ' + result)
-//   }
-// }
 
 
 

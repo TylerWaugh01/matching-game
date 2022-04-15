@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  justify-content: space-between
+  justify-content: space-evenly
 }
 
 .title {
@@ -38,25 +38,25 @@ img {
 
 .right-side {
   position: absolute;
-  margin-left: 50px;
+  margin-left: 150px;
   width: 600px;
   height: 500px;
-  background-color: aquamarine
+  /* background-color: aquamarine */
   
 }
 
 .left-side {
   position: absolute;
-  margin-left: 50px;
+  margin-left: 190px;
   width: 500px;
   height: 500px;
-  background-color: aquamarine
+  /* background-color: aquamarine */
   
 }
 
 #rightSide {
-  left: 500px;
-  border-left: 1px solid;
+  left: 545px;
+  border-left: 25px solid;
 
 }
 
