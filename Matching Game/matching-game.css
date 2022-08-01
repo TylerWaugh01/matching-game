@@ -1,0 +1,68 @@
+.container {
+  display: flex;
+  justify-content: space-evenly
+}
+
+.title {
+  margin: 0;
+  text-align: center;
+  border: 10px solid darkblue;
+  background-color: aquamarine;
+  border-radius: 20px;
+  padding: none;
+}
+
+.pet { 
+  margin: 0;
+  text-align: center;
+  font-size: larger;
+  border-radius: 20px;
+  padding: none;
+}
+
+#gameMusic {
+  display: none;
+}
+
+#dogBark {
+  display: none;
+}
+
+img {
+  position: absolute;
+  cursor: pointer;
+  height: 100px;
+  width: 100px;
+
+}
+
+.right-side {
+  position: absolute;
+  margin-left: 150px;
+  width: 600px;
+  height: 500px;
+  /* background-color: aquamarine */
+  
+}
+
+.left-side {
+  position: absolute;
+  margin-left: 190px;
+  width: 500px;
+  height: 500px;
+  /* background-color: aquamarine */
+  
+}
+
+#rightSide {
+  left: 545px;
+  border-left: 25px solid;
+
+}
+
+#gameContainer {
+  background-color: aquamarine;
+  margin-top: 20px;
+ 
+
+}
